@@ -28,7 +28,7 @@ public class RegistroApp {
         String contato= input.nextLine();
 
         clientes.add(new Cliente(nomeCliente, cpf, contato));
-
+        
     }
 
     public static void CadastrarProduto(ArrayList<Produto> produtos){
