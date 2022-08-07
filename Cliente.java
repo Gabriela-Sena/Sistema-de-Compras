@@ -37,6 +37,5 @@ public class Cliente {
     @Override
     public String toString() {
         return "\t" + nomeCliente + "\t\t\t" + cpf + "\t\t\t" + contato;
-    }
-    
+    }  
 }

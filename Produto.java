@@ -59,7 +59,5 @@ public class Produto {
     public String toString() {
         return "\t" + codigoProduto + "\t\t" + nomeProduto + "\t\t" + quantidadeProduto 
         + "\t\t\t" + tipoProduto + "\t\t" + valorProduto;
-    }
-
-    
+    }  
 }

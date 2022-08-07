@@ -8,9 +8,11 @@ public class RegistroApp {
         System.out.println("----------------------");
         System.out.println("1. Cadastrar Cliente");
         System.out.println("2. Buscar Cliente");
-        System.out.println("3. Cadastrar produto");
-        System.out.println("4. Buscar Produto");
-        System.out.println("5. Passar Compra");
+        System.out.println("3. Alterar dados do cliente");
+        System.out.println("4. Cadastrar produto");
+        System.out.println("5. Buscar Produto");
+        System.out.println("6. Alterar dados do produto");
+        System.out.println("7. Venda");
         System.out.println("----------------------");
     }
 
@@ -92,6 +94,93 @@ public class RegistroApp {
 
     }
 
+    public static void AlterarProduto(ArrayList<Produto> produtos){
+        System.out.println("Produtos cadastrados: ");
+        System.out.println(produtos.toString()); //MOSTRA TODOS OS PRODUTOS DSIPONIVEIS
+
+        System.out.println("Qual produto deseja modificar: ");
+        int escolhaProduto = input.nextInt();
+        input.nextLine();
+
+        Produto produto = produtos.get(escolhaProduto-1);
+        System.out.println("O que voce deseja modificar? 1 - Nome / 2 - Codigo / 3 - Quantidade / 4 - Tipo / 5 - Valor");
+        int resp = input.nextInt();
+        input.nextLine();
+
+        switch(resp){
+
+            case 1: 
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo nome do produto: ");
+            produto.setNomeProduto(input.nextLine());
+            break;
+
+            case 2:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo codigo do produto: ");
+            produto.setCodigoProduto(input.nextInt()); 
+            break;
+
+            case 3:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Nova quantidade: ");
+            produto.setQuantidadeProduto(input.nextInt());
+            break;
+
+            case 4:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo tipo: ");
+            produto.setTipoProduto(input.nextLine());
+            break;
+
+            case 5:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo valor: ");
+            produto.setValorProduto(input.nextDouble());
+            break;
+
+        }
+    }
+
+    public static void AlterarCliente(ArrayList<Cliente> clientes){
+        System.out.println("Clientes cadastrados: ");
+        System.out.println(clientes.toString()); //MOSTRA TODOS OS CLIENTES DSIPONIVEIS
+
+        System.out.println("Qual cliente deseja modificar: ");
+        int escolhaCliente = input.nextInt();
+        input.nextLine();
+
+        Cliente cliente = clientes.get(escolhaCliente-1);
+        System.out.println("O que voce deseja modificar? 1 - Nome / 2 - CPF / 3 - Contato");
+        int resp = input.nextInt();
+        input.nextLine();
+
+        switch(resp){
+
+            case 1: 
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo nome do cliente: ");
+            cliente.setNomeCliente(input.nextLine());
+            break;
+
+            case 2:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo CPF do cliente: ");
+            cliente.setCpf(input.nextLine()); 
+            break;
+
+            case 3:
+            System.out.println("-------------------------------------------------");
+            System.out.println("Novo contato: ");
+            cliente.setContato(input.nextLine());
+            break;
+        }
+    }
+
+    public static void Venda(ArrayList<Cliente> clientes, ArrayList<Produto> produtos){
+
+    }
+
     public static void main(String[] args){
         input = new Scanner(System.in);
         ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -111,20 +200,29 @@ public class RegistroApp {
                 
                 case 2:
                 BuscarCliente(clientes);
-  
                     break;
 
                 case 3:
+                AlterarCliente(clientes);
+                    break;
+
+                case 4:
                 CadastrarProduto(produtos);
                 System.out.println("------------------------------------------");
                     break;
 
-                case 4:
+                case 5:
                 BuscarProduto(produtos);
                     break;
+                
+                case 6:
+                AlterarProduto(produtos);
+                    break;
 
-                case 5:
-
+                case 7:
+                System.out.println("------------------------------------------");
+                Venda(clientes, produtos);
+                System.out.println("------------------------------------------");
                     break;
             }
         }
