@@ -5,6 +5,7 @@ public class Produto {
     private String tipoProduto;
     private double valorProduto;
     private int quantidadeProduto;
+    double valor;
     
     public Produto(String nomeProduto, int codigoProduto, String tipoProduto, double valorProduto,
             int quantidadeProduto) {
@@ -59,5 +60,9 @@ public class Produto {
     public String toString() {
         return "\t" + codigoProduto + "\t\t" + nomeProduto + "\t\t" + quantidadeProduto 
         + "\t\t\t" + tipoProduto + "\t\t" + valorProduto;
-    }  
+    }
+
+   
+
+    
 }
