@@ -178,8 +178,8 @@ public class RegistroApp {
     }
 
     public static void Venda(ArrayList<Cliente> clientes, ArrayList<Produto> produtos){
-
         
+
     }
 
     public static void main(String[] args){
